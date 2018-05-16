@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+input{
+    margin: 5px;
+}
+
+agm-map {
+    height: 300px;
+  }
+
+  .numero_par{
+      background-color: aliceblue;
+      color:white;
+  }

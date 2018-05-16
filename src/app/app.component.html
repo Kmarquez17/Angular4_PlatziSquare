@@ -19,7 +19,28 @@
 <input type="text" placeholder="Nombre" [(ngModel)]="nombre" />
 <input type="text" placeholder="Apellido" [(ngModel)]="apellido" />
 <br>
-<h1>Mi nombre es {{nombre + ' ' + apellido}}</h1>
+  <h1>Mi nombre es {{nombre + ' ' + apellido}}</h1>
 </div>
 
 
+<hr>
+<h1>{{ map }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+<hr>
+<ul>
+  <ng-container *ngFor="let lugar of lugares">
+    <li *ngIf="lugar.active" >{{lugar.nombre}}</li>
+  </ng-container> 
+</ul>
+
+<ul>
+  <ng-container *ngFor="let lugar of lugares; let i = index">
+    <li [ngStyle]="{color:(lugar.active) ? 'black': 'gray'}" [ngClass]="{numero_par: (i+1) % 2 !== 0}">{{lugar.nombre}}</li>
+  </ng-container> 
+</ul>

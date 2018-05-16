@@ -12,6 +12,20 @@ export class AppComponent {
   listo = false;
   nombre:String = '';
   apellido:String = '';
+  lugares:any = [
+    { active:true, nombre:'Floreria la gardenia'},
+    { active:false, nombre:'Donas la pasadita'},
+    { active:true, nombre:'Veterinaria Huellitas feliz'},
+    { active:true, nombre:'Floreria la gardenia'},
+    { active:false, nombre:'Donas la pasadita'},
+    { active:true, nombre:'Veterinaria Huellitas feliz'},
+    { active:true, nombre:'Floreria la gardenia'},
+    { active:false, nombre:'Donas la pasadita'},
+    { active:true, nombre:'Veterinaria Huellitas feliz'}
+  ];
+  lat:number = 12.1251293;
+  lng:number = -86.224823;
+  map:string = 'Maps'
 
   constructor(){
     setTimeout(() => {
