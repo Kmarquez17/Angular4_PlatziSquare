@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "angularfire2/database";
 
 @Injectable()
 
@@ -15,12 +16,19 @@ export class LugaresService{
         {id:9 ,plan:"pagado", cercania:3, distancia:10 , active:true, nombre:'Veterinaria Huellitas feliz'}
       ];
 
+      constructor(private afDB:AngularFireDatabase){
 
+      }
       public getLugares(){
           return this.lugares;
       }
 
       public buscarLugar(id){
         return this.lugares.filter((lugar) => {return lugar.id == id}) [0] || null;
+      }
+
+      public guardarLugar(lugar){
+          console.log(lugar)
+          this.afDB.database.ref('lugares/1').set(lugar)
       }
 }
